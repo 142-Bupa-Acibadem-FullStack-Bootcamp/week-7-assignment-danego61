@@ -1,0 +1,30 @@
+<div class="toolbar" role="banner">
+  <span>Kur Çevirme</span>
+</div>
+
+<div class="content" role="main">
+  <div>
+    <label style="margin-right: 10px;">Choose a car:</label>
+    <select (change)="onChange($event, true)">
+      <option value="TRY">TL</option>
+      <option value="USD">Dolar</option>
+      <option value="EUR">Euro</option>
+      <option value="GBP">Sterlin</option>
+    </select>
+    <label style="margin-left: 10px;margin-right: 10px;">Choose a car:</label>
+    <select (change)="onChange($event, false)">
+      <option value="TRY">TL</option>
+      <option value="USD" selected>Dolar</option>
+      <option value="EUR">Euro</option>
+      <option value="GBP">Sterlin</option>
+    </select>
+  </div>
+  <div style="padding: 15px;">
+    <input type="number" (input)="updateChanges()" #input>
+  </div>
+  <div>
+    <p>Result: {{result}}</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
